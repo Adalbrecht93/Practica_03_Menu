@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 
@@ -29,6 +30,31 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SeekBar kg = (SeekBar) findViewById(R.id.Peso);
+        TextView t1 = (TextView) findViewById(R.id.Pes);
+
+        kg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
+            @Override
+            public void onStopTrackingTouch(SeekBar kg) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar kg) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar kg, int progress, boolean fromUser) {
+                // TODO Auto-generated method stub
+
+            }
+        }
+        );
+
+
     }
 
 
@@ -89,7 +115,6 @@ public class MainActivity extends Activity {
         }
 
         SeekBar kg = (SeekBar) findViewById(R.id.Peso);
-
         int weight = kg.getProgress();
 
         EditText borncontent = (EditText) findViewById(R.id.data);
